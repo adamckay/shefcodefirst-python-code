@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     response = requests.get(
         'https://api.thecatapi.com/v1/images/search',
-        headers={'x-api-key': '8c34872d-823b-40f5-914d-4dc13d7cdbb0'}
+        headers={'x-api-key': '###API_KEY_HERE###'}
     )
     data = response.json()[0]
     print(data)
@@ -22,7 +22,7 @@ def add_favourite():
 
     response = requests.post(
         'https://api.thecatapi.com/v1/favourites',
-        headers={'x-api-key': '8c34872d-823b-40f5-914d-4dc13d7cdbb0'},
+        headers={'x-api-key': '###API_KEY_HERE###'},
         json={
             'image_id': image_id,
             'sub_id': 'xviyxa'
@@ -36,7 +36,7 @@ def add_favourite():
 def see_favourites():
     response = requests.get(
         'https://api.thecatapi.com/v1/favourites?limit=3',
-        headers={'x-api-key': '8c34872d-823b-40f5-914d-4dc13d7cdbb0'}
+        headers={'x-api-key': '###API_KEY_HERE###'}
     )
     data = response.json()
     print(data)
